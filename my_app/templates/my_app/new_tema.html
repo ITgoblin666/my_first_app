@@ -1,0 +1,12 @@
+{% extends "my_app/base.html" %}
+
+{% block content %}
+
+<p>Add a new tema:</p>
+
+<form action="{% url 'my_app:new_tema' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+</form>
+
+{% endblock content %}

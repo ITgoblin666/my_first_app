@@ -1,0 +1,15 @@
+{% extends "my_app/base.html" %}
+
+{% block content %}
+
+  <p><a href="{% url 'my_app:tema' tema.id %}">{{ tema }}</a></p>
+
+  <p>Edit razdel:</p>
+
+  <form action="{% url 'my_app:edit_razdel' razdel.id %}" method='post'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button name="submit">save changes</button>
+  </form>
+
+{% endblock content %}
